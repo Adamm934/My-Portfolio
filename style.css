@@ -201,9 +201,13 @@ ul.header__main-nav--links li a:active::after{
         height: 100%;
         position: fixed;
         top: 0;
-        right: 0;
+        right: -30rem;
         background-color: var(--secondary-color-m);
         text-align: center;
+    }
+    /* adding dynamic class hamburger clicked in js*/
+    .clicked {
+        left: 55%;
     }
 /* hamburger lines */
     .header__main-nav--hamburger {
