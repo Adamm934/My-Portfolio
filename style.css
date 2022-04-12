@@ -1,0 +1,146 @@
+/* RESET ALL CSS PROPS */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* UTILITY COMPONENTS */
+html {
+    font-size: 62.5%;
+
+    /* CUSTOM PROPERTIES CREATING MY OWN PROPERTYS */
+
+    /* main color */
+    --primary-color: #014d4e;
+
+    /* secondary color */
+    --secondary-color: #d45c0c;
+
+     --secondary-color-m: #f59a5d;
+
+     /* tertiary color */
+
+     --tertiary-color: #356953;
+
+     --tertiary-color-m: #013374;
+
+    
+}
+
+
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif, cursive;
+    line-height: 1.5;
+
+    display: flex;
+}
+
+/* MAIN STYLING */
+
+/* SIDE NAVBAR */
+/* because as we scrool this element stays on aside */
+aside#side-nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+
+/* bar on the left side */
+div.side-nav__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: var(--primary-color);
+}
+
+/* logo */
+
+div.side-nav__content--logo img{
+    width: calc(3vw + 3vh);
+
+    /* preventing overflow of picture from container also cover helps prevent loss of aspect ratio */
+
+    /* object-fit: cover; */
+}
+
+/* setting logos appear properly through theyre  */
+
+ul.side-nav__content--social {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+ul.side-nav__content--social a i {
+    font-size: calc(1rem + 0.6667vw);
+    color: white;
+
+    padding-bottom: calc(2rem + 0.6667vw);
+
+    transition: color cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+ul.side-nav__content--social a i:hover,
+ul.side-nav__content--social a i:active{
+    color: var(--secondary-color);
+}
+
+li{
+    list-style: none;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Main CONTENT OF THE WEB */
+
+/* ALL CONTENT CONTAINER(MAIN ELEMENT)*/
+
+main {
+    flex: 1;
+}
+
+
+/* MAIN NAV HEADER */ 
+
+header#header {
+    background-color: var(--secondary-color);
+    height: calc(3vw + 3vh);
+    z-index: 2;
+}
+
+nav#header__main-nav {
+    height: 100%;
+}
+
+ul.header__main-nav--links {
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+}
+
+ul.header__main-nav--links li {
+    padding-right: 3vw;
+}
+
+ul.header__main-nav--links li a{
+    position: relative;
+    padding: 0.2rem 0.6rem;
+    font-size: calc(1rem + 0.66667vw);
+}
