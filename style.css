@@ -13,26 +13,27 @@ html {
 
     /* CUSTOM PROPERTIES CREATING MY OWN PROPERTYS */
 
-    /* main color */
-    --primary-color: #014d4e;
+    /* Main Color */
+  --primary-color: #014d4e;
 
-    /* secondary color */
-    --secondary-color: #d45c0c;
+  /* Secondary Color */
+  --secondary-color: #ff9408;
 
-     --secondary-color-m: #f59a5d;
+  /* Secondary Color Modified */
+  --secondary-color-m: #ff940872;
 
-     /* tertiary color */
+  /* tertiary color */
+  --tertiary-color: #017374;
 
-     --tertiary-color: #356953;
-
-     --tertiary-color-m: #013374;
+  /* tertiary color modified */
+  --tertiary-color-m: #01727498;
 
     
 }
 
 
 body {
-    font-family:Verdana, Geneva, Tahoma, sans-serif, cursive;
+    font-family: 'Lato', sans-serif;
     line-height: 1.5;
 
     display: flex;
@@ -189,10 +190,111 @@ ul.header__main-nav--links li a:active::after{
 }
 
 
+/* hero section aka showcase */
+
+section#showcase {
+    height:100vh;
+    /* cover fixed it as it makes cover entire parent aka main */
+    background-image: url(/img/2.jpg);
+    background-size: cover;
+    background-position: center;
+    /* makes img static without scrolling */
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+div.show__content {
+    background-color: var(--secondary-color-m);
+    /* dynaamic padding implemented in order when viewport height changes*/
+    padding: calc(1rem + 2vw);
+    height: calc(4rem + 20vmax);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* adding animation */
+
+    animation: hero 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* animation */
+@keyframes hero {
+    0% {
+        transform: translateX(-100rem) rotate(360deg);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.show__content--title {
+    font-size: calc(1.5rem + 3vw);
+    color: white;
+}
+
+.showcase_content--parag{
+    font-family: 'Lobster', cursive;;
+    font-size: calc(1.5rem + 1vw);
+    color: whitesmoke;
+}
+
+.showcase__content--link:link,
+.showcase__content--link:visited{
+    padding: 1rem 0;
+    transition: all 0.5s ease-in-out;
+    width: 9rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.showcase__content--link:link::after,
+.showcase__content--link:visited::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color:var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    /* z index added in order to element after hoovering be visible */
+    z-index: -1;
+}
+
+.showcase__content--link:hover::after,
+.showcase__content--link:active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
 
 
 
 /* applying media query in order to apply hamburger dropdown while width of screen <610 */
+
+/* adding media query to keep hero section visible highly experimented value */
+
+@media screen and (max-width: 700px){
+   section#showcase{
+       background-position: 30%;
+       align-items: flex-end;
+   }
+}
+    
+
+
 
 @media screen and (max-width: 610px) {
     /* main nav header  */
