@@ -356,10 +356,103 @@ section#about-me {
 
 .about-me__content--parag{
     font-size: 0.9rem;
-    position: relative;
     
 }
+
+.about-me__content--link:link,
+.about-me__content--link:visited{
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.about-me__content--link:link::after,
+.about-me__content--link:visited::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    z-index: -1;
+}
+
+.about-me__content--link:hover::after,
+.about-me__content--link:active::after{
+    transform: scaleY(1);
+}
 /* end of about me */
+
+
+/* Services stylibg */
+
+section#services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding: 6rem 2rem 2rem;
+    background-color: var(--primary-color);
+}
+
+.service {
+    padding: 4rem;
+    margin: 0 2rem 4rem;
+    flex-basis: 35rem;
+    flex-grow: 1;
+    background-color: var(--secondary-color);
+    border-bottom: 0.2rem solid var(--secondary-color);
+
+    position: relative;
+
+    z-index: 1;
+    color: white;
+    overflow: hidden;
+}
+
+.service::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+
+    transform: scaleX(0);
+    transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+    z-index: -1;
+    
+}
+
+.service:hover::after,
+.service:active::after{
+    transform: scaleX(1);
+}
+
+.service i,
+.services--title{
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 3rem;
+
+}
+
+
+
+
+
 
 
 /* applying media query in order to apply hamburger dropdown while width of screen <610 */
