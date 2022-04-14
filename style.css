@@ -14,7 +14,7 @@ html {
     /* CUSTOM PROPERTIES CREATING MY OWN PROPERTYS */
 
     /* Main Color */
-  --primary-color: #014d4e;
+  --primary-color: #141b1b;
 
   /* Secondary Color */
   --secondary-color: #ff9408;
@@ -470,6 +470,216 @@ section#services {
    width: 40%;
 }
 
+/* SKILLS SECTION */
+
+section#skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* moving h3 so they are not closed together */
+
+    flex-wrap: wrap;
+    padding: calc(0.7rem + 2vw);
+    background-color: var(--tertiary-color);
+}
+
+.skills__personal,
+.skills__coding {
+    margin-left: 2rem;
+    padding: calc(1rem +2vw);
+    text-transform: uppercase;
+    flex-grow: 1;
+    flex-basis: 40rem;
+}
+
+.skills__personal--title,
+.skills__coding--title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.skills__personal h4,
+.skills__coding h4{
+    font-size: 1.5rem;
+    color: white;
+}
+.skills__personal--progress,
+.skills__coding--progress{
+    position: relative;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 2.5rem;
+    background-color: var(--primary-color);
+
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2rem;
+}
+
+.skills__personal--progress span,
+.skills__coding--progress span {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: var(--secondary-color);
+    /* width: 4rem; */
+}
+
+.skills__personal--progress__1{
+    animation: design-1 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes design-1 {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 80%;
+    }
+}
+
+.skills__personal--progress__2{
+    animation: design-2 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes design-2 {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 75%;
+    }
+}
+
+.skills__personal--progress__3{
+    animation: design-3 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes design-3 {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 70%;
+    }
+}
+
+.skills__personal--progress__4{
+    animation: design-4 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes design-4 {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 75%;
+    }
+}
+
+/* CODING SKILLS ANIME */
+.skills__coding--progress__1{
+    animation: design-5 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes design-5 {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 60%;
+    }
+}
+
+.skills__coding--progress__2{
+    animation: design-6 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes design-6 {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 75%;
+    }
+}
+
+.skills__coding--progress__3{
+    animation: design-7 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes design-7 {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 70%;
+    }
+}
+
+.skills__coding--progress__4{
+    animation: design-8 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes design-8 {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 65%;
+    }
+}
+
+/* **************\ INTERESTS SECTION */
+
+
+
+section#testimonials {
+  padding: calc(1rem + 2vw);
+  background-color: var(--secondary-color);
+  color: white;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+.testimonials__card {
+  padding: 2vw;
+  flex-basis: 50rem;
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials__card--img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.testimonials__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.35s ease-in-out;
+}
+
+.testimonials__card--content__title {
+  font-size: 2.3rem;
+  text-transform: uppercase;
+}
+
+.testimonials__card--content__title{
+    position: absolute;
+    top: 60%;
+    left:0;
+}
+
 
 
 
@@ -588,4 +798,15 @@ section#services {
     ul.header__main-nav--links li.fade {
         opacity: 1;
     } 
+
     }    
+
+
+    /* MEdia Query for larger then 1510px */
+
+@media screen and (min-width: 1510px){
+    body {
+        width: 1510px;
+        margin: 0 auto;
+    }
+}
