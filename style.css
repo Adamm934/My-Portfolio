@@ -691,9 +691,14 @@ section#places {
     object-fit: cover;
 }
 
-.places__card:hover .places__card--content{
+.places__card:hover .places__card--content,
+.places__card:active .places__card--content{
     transform: scaleY(1);
+    transform-origin: center;
 }
+
+
+
 
 
 
@@ -828,3 +833,5 @@ section#places {
         margin: 0 auto;
     }
 }
+
+@
